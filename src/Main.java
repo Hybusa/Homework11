@@ -45,7 +45,7 @@ public class Main {
     }
 
 
-    public static String checkLeapYear(int year) {
+    private static String checkLeapYear(int year) {
 
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
             return (year + " год ялвяется высокосным.");
@@ -53,7 +53,7 @@ public class Main {
             return (year + " год не ялвяется высокосным.");
     }
 
-    public static int inputCheckNumberInRange(int min, int max) {
+    private static int inputCheckNumberInRange(int min, int max) {
         System.out.println("Введите год от " + min + " до " + max);
         int number;
 
@@ -74,7 +74,7 @@ public class Main {
         return number;
     }
 
-    public static String getAppVersionMessage() {
+    private static String getAppVersionMessage() {
 
         String clientOS = checkOSInput("iOS", "Android");
         System.out.println("Год произвосдства вашего аппрата");
@@ -117,7 +117,7 @@ public class Main {
         return typeOS;
     }
 
-    public static int getRandomNumberInRange(int min, int max) {
+    private static int getRandomNumberInRange(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 }
