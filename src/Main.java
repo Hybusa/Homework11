@@ -17,6 +17,17 @@ public class Main {
         getDeliveryDaysByDistance(getRandomNumberInRange(0, 150));
     }
 
+    private static void task2() {
+        System.out.println("Задание 2:");
+        getAppVersionMessage();
+    }
+
+    private static void task1() {
+        System.out.println("Задание 1:");
+        System.out.println("Проверка на високостность");
+        checkLeapYear(inputCheckNumberInRange(1500, 2500));
+    }
+
     private static void getDeliveryDaysByDistance(int deliveryDistance) {
         int noDays = 1;
 
@@ -32,17 +43,6 @@ public class Main {
         System.out.println("Потребуется дней: " + noDays);
 
         System.out.println();
-    }
-
-    private static void task2() {
-        System.out.println("Задание 2:");
-        getAppVersionMessage();
-    }
-
-    private static void task1() {
-        System.out.println("Задание 1:");
-        System.out.println("Проверка на високостность");
-        checkLeapYear(inputCheckNumberInRange(1500, 2500));
     }
 
 
