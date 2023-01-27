@@ -14,47 +14,43 @@ public class Main {
 
     private static void task3() {
         System.out.println("Задание 3:");
-        getDeliveryDaysByDistance(getRandomNumberInRange(0, 150));
+        System.out.println(getDeliveryDaysByDistance(getRandomNumberInRange(0, 150)));
+        System.out.println();
     }
 
     private static void task2() {
         System.out.println("Задание 2:");
-        getAppVersionMessage();
+        System.out.println(getAppVersionMessage());
+        System.out.println();
     }
 
     private static void task1() {
         System.out.println("Задание 1:");
         System.out.println("Проверка на високостность");
-        checkLeapYear(inputCheckNumberInRange(1500, 2500));
+        System.out.println(checkLeapYear(inputCheckNumberInRange(1500, 2500)));
+        System.out.println();
     }
 
-    private static void getDeliveryDaysByDistance(int deliveryDistance) {
+    private static String getDeliveryDaysByDistance(int deliveryDistance) {
         int noDays = 1;
 
-        if (deliveryDistance > 100) {
-            System.out.println("Доставки нет");
-            return;
-        }
+        if (deliveryDistance > 100)
+            return ("Доставки нет");
         if (deliveryDistance > 20)
             noDays++;
         if (deliveryDistance > 60)
             noDays++;
 
-        System.out.println("Потребуется дней: " + noDays);
-
-        System.out.println();
+        return ("Потребуется дней: " + noDays);
     }
 
 
-    public static void checkLeapYear(int year) {
-
+    public static String checkLeapYear(int year) {
 
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-            System.out.println(year + " год ялвяется высокосным.");
+            return (year + " год ялвяется высокосным.");
         else
-            System.out.println(year + " год не ялвяется высокосным.");
-
-        System.out.println();
+            return (year + " год не ялвяется высокосным.");
     }
 
     public static int inputCheckNumberInRange(int min, int max) {
@@ -78,26 +74,26 @@ public class Main {
         return number;
     }
 
-    public static void getAppVersionMessage() {
+    public static String getAppVersionMessage() {
 
         String clientOS = checkOSInput("iOS", "Android");
         System.out.println("Год произвосдства вашего аппрата");
-        int clientDeviceYear = inputCheckNumberInRange(2007, LocalDate.now().getYear());
+        int clientDeviceYear = inputCheckNumberInRange(2007, CURRENT_YEAR);
 
         if (clientOS.equalsIgnoreCase("iOS")) {
             if (clientDeviceYear < CURRENT_YEAR)
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                return("Установите облегченную версию приложения для iOS по ссылке");
             else
-                System.out.println("Установите версию приложения для iOS по ссылке");
+                return("Установите версию приложения для iOS по ссылке");
         }
         if (clientOS.equalsIgnoreCase("Android")) {
             if (clientDeviceYear < CURRENT_YEAR)
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                return("Установите облегченную версию приложения для Android по ссылке");
             else
-                System.out.println("Установите версию приложения для Android по ссылке");
+                return("Установите версию приложения для Android по ссылке");
         }
 
-        System.out.println();
+       return ("Error");
     }
 
     private static String checkOSInput(String one, String two) {
