@@ -84,13 +84,13 @@ public class Main {
         System.out.println("Год произвосдства вашего аппрата");
         int clientDeviceYear = inputCheckNumberInRange(2007, LocalDate.now().getYear());
 
-        if (clientOS.equals("iOS")) {
+        if (clientOS.equalsIgnoreCase("iOS")) {
             if (clientDeviceYear < CURRENT_YEAR)
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             else
                 System.out.println("Установите версию приложения для iOS по ссылке");
         }
-        if (clientOS.equals("Android")) {
+        if (clientOS.equalsIgnoreCase("Android")) {
             if (clientDeviceYear < CURRENT_YEAR)
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             else
@@ -113,7 +113,7 @@ public class Main {
 
             typeOS = myInput.next();
 
-            if (typeOS.equals(one) || typeOS.equals(two))
+            if (typeOS.equalsIgnoreCase(one) || typeOS.equalsIgnoreCase(two))
                 break;
             else
                 System.out.println("Введите поравильное значение!");
